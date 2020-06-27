@@ -1,0 +1,261 @@
+<html>
+<head>
+<title>Retro calculator</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+<script src="script.js"></script>
+<style>
+div#screen {
+  position: absolute;
+  display: none;
+  top: 230px;
+  z-index: 1;
+}
+
+div#mini_screen {
+  position: absolute;
+  display: none;
+  top: 180px;
+  z-index: 1;
+}
+</style>
+</head>
+<body bgcolor="#FFFFFF" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+<!-- Save for Web Slices (bg.gif) -->
+<table id="Table_01" width="507" height="901" border="0" cellpadding="0" cellspacing="0">
+	<tr>
+		<td colspan="18">
+			<img src="images/bg_01.gif" width="506" height="165" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="1" height="165" alt=""></td>
+	</tr>
+	<tr>
+		<td colspan="2" rowspan="2">
+			<img src="images/bg_02.gif" width="88" height="232" alt=""></td>
+		<td colspan="14">
+			<img src="images/bg_03.gif" width="332" height="166" alt=""></td>
+		<td colspan="2" rowspan="2">
+			<img src="images/bg_04.gif" width="86" height="232" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="1" height="166" alt=""></td>
+	</tr>
+	<tr>
+		<td colspan="14">
+			<img src="images/bg_05.gif" width="332" height="66" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="1" height="66" alt=""></td>
+	</tr>
+	<tr>
+		<td rowspan="13">
+			<img src="images/bg_06.gif" width="44" height="503" alt=""></td>
+		<td colspan="2">
+			<div id="le"><img src="images/bg_07.gif" width="60" height="44" alt="length"></div></td>
+		<td rowspan="2">
+			<img src="images/bg_08.gif" width="28" height="70" alt=""></td>
+		<td colspan="2">
+			<div id="weight"><img src="images/bg_09.gif" width="65" height="44" alt="weight"></div></td>
+		<td rowspan="2">
+			<img src="images/bg_10.gif" width="24" height="70" alt=""></td>
+		<td colspan="3">
+			<div id="temp"><img src="images/bg_11.gif" width="63" height="44" alt="Temperature"></div></td>
+		<td rowspan="2">
+			<img src="images/bg_12.gif" width="28" height="70" alt=""></td>
+		<td colspan="2">
+			<div id="root"><img src="images/bg_13.gif" width="61" height="44" alt="root"></div></td>
+		<td colspan="2" rowspan="2">
+			<img src="images/bg_14.gif" width="26" height="70" alt=""></td>
+		<td colspan="2">
+			<div id="vol"><img src="images/bg_15.gif" width="61" height="44" alt="Volume"></div></td>
+		<td rowspan="13">
+			<img src="images/bg_16.gif" width="46" height="503" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="1" height="44" alt=""></td>
+	</tr>
+	<tr>
+		<td colspan="2">
+			<img src="images/bg_17.gif" width="60" height="26" alt=""></td>
+		<td colspan="2">
+			<img src="images/bg_18.gif" width="65" height="26" alt=""></td>
+		<td colspan="3">
+			<img src="images/bg_19.gif" width="63" height="26" alt=""></td>
+		<td colspan="2">
+			<img src="images/bg_20.gif" width="61" height="26" alt=""></td>
+		<td colspan="2">
+			<img src="images/bg_21.gif" width="61" height="26" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="1" height="26" alt=""></td>
+	</tr>
+	<tr>
+		<td colspan="3">
+			<div id="AC"><img src="images/bg_22.gif" width="88" height="63" alt="AC"></div></td>
+		<td rowspan="11">
+			<img src="images/bg_23.gif" width="23" height="433" alt=""></td>
+		<td colspan="3">
+			<div id="neg"><img src="images/bg_24.gif" width="84" height="63" alt="negative"></div></td>
+		<td rowspan="11">
+			<img src="images/bg_25.gif" width="29" height="433" alt=""></td>
+		<td colspan="3">
+			<div id="prc"><img src="images/bg_26.gif" width="83" height="63" alt="percent"></div></td>
+		<td colspan="2" rowspan="11">
+			<img src="images/bg_27.gif" width="26" height="433" alt=""></td>
+		<td colspan="3">
+			<div id="divide"><img src="images/bg_28.gif" width="83" height="63" alt="/"></div></td>
+		<td>
+			<img src="images/spacer.gif" width="1" height="63" alt=""></td>
+	</tr>
+	<tr>
+		<td colspan="3" rowspan="2">
+			<img src="images/bg_29.gif" width="88" height="19" alt=""></td>
+		<td colspan="3">
+			<img src="images/bg_30.gif" width="84" height="16" alt=""></td>
+		<td colspan="3">
+			<img src="images/bg_31.gif" width="83" height="16" alt=""></td>
+		<td colspan="3">
+			<img src="images/bg_32.gif" width="83" height="16" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="1" height="16" alt=""></td>
+	</tr>
+	<tr>
+		<td colspan="3" rowspan="2">
+			<div id="8"><img src="images/bg_33.gif" width="84" height="65" alt="8"></div></td>
+		<td colspan="3" rowspan="2">
+			<div id="9"><img src="images/bg_34.gif" width="83" height="65" alt="9"></div></td>
+		<td colspan="3" rowspan="2">
+			<div id="multiply"><img src="images/bg_35.gif" width="83" height="65" alt=""></div></td>
+		<td>
+			<img src="images/spacer.gif" width="1" height="3" alt=""></td>
+	</tr>
+	<tr>
+		<td colspan="3">
+			<div id="7"><img src="images/bg_36.gif" width="88" height="62" alt="7"></div></td>
+		<td>
+			<img src="images/spacer.gif" width="1" height="62" alt=""></td>
+	</tr>
+	<tr>
+		<td colspan="3">
+			<img src="images/bg_37.gif" width="88" height="16" alt=""></td>
+		<td colspan="3">
+			<img src="images/bg_38.gif" width="84" height="16" alt=""></td>
+		<td colspan="3">
+			<img src="images/bg_39.gif" width="83" height="16" alt=""></td>
+		<td colspan="3">
+			<img src="images/bg_40.gif" width="83" height="16" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="1" height="16" alt=""></td>
+	</tr>
+	<tr>
+		<td colspan="3">
+
+			<div id="4"><img src="images/bg_41.gif" width="88" height="63" alt="4"></div></td>
+		<td colspan="3">
+			<div id="5"><img src="images/bg_42.gif" width="84" height="63" alt="5"></div></td>
+		<td colspan="3">
+			<div id="6"><img src="images/bg_43.gif" width="83" height="63" alt="6"></div></td>
+		<td colspan="3">
+			<div id="minus"><img src="images/bg_44.gif" width="83" height="63" alt="-"></div></td>
+		<td>
+			<img src="images/spacer.gif" width="1" height="63" alt=""></td>
+	</tr>
+	<tr>
+		<td colspan="3">
+			<img src="images/bg_45.gif" width="88" height="15" alt=""></td>
+		<td colspan="3">
+			<img src="images/bg_46.gif" width="84" height="15" alt=""></td>
+		<td colspan="3">
+			<img src="images/bg_47.gif" width="83" height="15" alt=""></td>
+		<td colspan="3">
+			<img src="images/bg_48.gif" width="83" height="15" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="1" height="15" alt=""></td>
+	</tr>
+	<tr>
+		<td colspan="3">
+			<div id="1"><img src="images/bg_49.gif" width="88" height="64" alt="1"></div></td>
+		<td colspan="3">
+			<div id="2"><img src="images/bg_50.gif" width="84" height="64" alt="2"></div></td>
+		<td colspan="3">
+			<div id="3"><img src="images/bg_51.gif" width="83" height="64" alt="3"></div></td>
+		<td colspan="3" rowspan="3">
+			<div id="eq"><img src="images/bg_52.jpg" width="83" height="143" alt="="></div></td>
+		<td>
+			<img src="images/spacer.gif" width="1" height="64" alt=""></td>
+	</tr>
+	<tr>
+		<td colspan="3">
+			<img src="images/bg_53.gif" width="88" height="16" alt=""></td>
+		<td colspan="3">
+			<img src="images/bg_54.gif" width="84" height="16" alt=""></td>
+		<td colspan="3">
+			<img src="images/bg_55.gif" width="83" height="16" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="1" height="16" alt=""></td>
+	</tr>
+	<tr>
+		<td colspan="3">
+			<div id="0"><img src="images/bg_56.gif" width="88" height="63" alt="0"></div></td>
+		<td colspan="3">
+			<div id="dot"><img src="images/bg_57.gif" width="84" height="63" alt="."></div></td>
+		<td colspan="3">
+			<div id="plus"><img src="images/bg_58.gif" width="83" height="63" alt="+"></div></td>
+		<td>
+			<img src="images/spacer.gif" width="1" height="63" alt=""></td>
+	</tr>
+	<tr>
+		<td colspan="3">
+			<img src="images/bg_59.gif" width="88" height="52" alt=""></td>
+		<td colspan="3">
+			<img src="images/bg_60.gif" width="84" height="52" alt=""></td>
+		<td colspan="3">
+			<img src="images/bg_61.gif" width="83" height="52" alt=""></td>
+		<td colspan="3">
+			<img src="images/bg_62.gif" width="83" height="52" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="1" height="52" alt=""></td>
+	</tr>
+	<tr>
+		<td>
+			<img src="images/spacer.gif" width="44" height="1" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="44" height="1" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="16" height="1" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="28" height="1" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="23" height="1" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="42" height="1" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="24" height="1" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="18" height="1" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="29" height="1" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="16" height="1" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="28" height="1" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="39" height="1" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="22" height="1" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="4" height="1" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="22" height="1" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="21" height="1" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="40" height="1" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="46" height="1" alt=""></td>
+		<td></td>
+	</tr>
+</table>
+<!-- End Save for Web Slices -->
+<div id="screen"></div>
+<div id="mini_screen"></div>
+</body>
+</html>
